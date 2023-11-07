@@ -76,3 +76,13 @@ label {
     cursor: pointer;
     vertical-align: bottom;
 }
+
+button {
+    background-color: #00ffff;
+    color: black;
+    font-family: Inter;
+    font-size: 33px;
+    border: none;
+    font-weight: bold;
+    padding: 15px 40px;
+}
