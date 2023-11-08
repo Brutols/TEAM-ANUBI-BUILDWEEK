@@ -100,55 +100,63 @@ const questions = [
 //TODO counter da 30sec a 0sec (border per il bordino che si svuota)
 let vote = 0;
 
-let currentQuestionIndex = randomSelector
+let currentQuestionIndex;
+console.log(currentQuestionIndex);
 
-const showQuestion = function () {  // mostra domande e risposte in html
+const showQuestion = function () {
+  // mostra domande e risposte in html
   const randomSelector = Math.floor(Math.random() * questions.length); //seleziona domanda randomica
   console.log(randomSelector);
-    let currentQuestion = questions[randomSelector]
-    console.log(currentQuestion);
-    //! document.querySelector("h1").innerText = `${currentQuestion.question}`
-    let answers = []
-    answers.push(currentQuestion.correct_answer)
-    for (let i = 0; i < currentQuestion.incorrect_answers.length; i++) {
-        answers.push(currentQuestion.incorrect_answers[i])
+  let currentQuestion = questions[randomSelector];
+  console.log(currentQuestion);
+  //! document.querySelector("h1").innerText = `${currentQuestion.question}`
+  let answers = [];
+  answers.push(currentQuestion.correct_answer);
+  for (let i = 0; i < currentQuestion.incorrect_answers.length; i++) {
+    answers.push(currentQuestion.incorrect_answers[i]);
+  }
+  console.log(answers);
+  let shuffle = function (array) {
+    //randomizza l'array
+    let currentIndex = array.length,
+      randomIndex;
+
+    // While there remain elements to shuffle.
+    while (currentIndex > 0) {
+      // Pick a remaining element.
+      randomIndex = Math.floor(Math.random() * currentIndex);
+      currentIndex--;
+
+      // And swap it with the current element.
+      [array[currentIndex], array[randomIndex]] = [
+        array[randomIndex],
+        array[currentIndex],
+      ];
     }
-    console.log(answers);
-    let shuffle = function(array) { //randomizza l'array
-        let currentIndex = array.length,  randomIndex;
-      
-        // While there remain elements to shuffle.
-        while (currentIndex > 0) {
-      
-          // Pick a remaining element.
-          randomIndex = Math.floor(Math.random() * currentIndex);
-          currentIndex--;
-      
-          // And swap it with the current element.
-          [array[currentIndex], array[randomIndex]] = [
-            array[randomIndex], array[currentIndex]];
-        }
-      
-        return array, randomSelector;
-      }
-      shuffle(answers)
-      console.log(answers);
-      //! risposte innerHTML
-      questions.splice(randomSelector, 1)
-      console.log(questions);
-      console.log(questions.length);
+
+    return array;
+  };
+  shuffle(answers);
+  console.log(answers);
+  //! risposte innerHTML
+  questions.splice(randomSelector, 1);
+  console.log(questions);
+  console.log(questions.length);
+  currentQuestionIndex = randomSelector;
 };
 
-showQuestion()
+showQuestion();
+console.log(currentQuestionIndex);
 
-
-  let checkAnswer = function() {
-    if (answerButton.innerText === questions[currentQuestionIndex].correct_answer) {
-      vote += 1
-    };
-    if (questions.length > 0) {
-      showQuestion()
-    } else {
-      //risultato
-    }
+let checkAnswer = function () {
+  if (
+    answerButton.innerText === questions[currentQuestionIndex].correct_answer
+  ) {
+    vote += 1;
   }
+  if (questions.length > 0) {
+    showQuestion();
+  } else {
+    //!mostrare risultato
+  }
+};
