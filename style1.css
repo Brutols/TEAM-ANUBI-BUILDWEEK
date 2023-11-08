@@ -59,7 +59,7 @@ ul {
 footer {
   display: flex;
   margin-left: 5%;
-  margin-right: 25%;
+  margin-right: 37%;
   justify-content: space-between;
   margin-top: 7.5%;
 }
@@ -77,6 +77,10 @@ label {
     vertical-align: bottom;
 }
 
+.button {
+  position: relative;
+}
+
 button {
     background-color: #00ffff;
     color: black;
@@ -85,4 +89,6 @@ button {
     border: none;
     font-weight: bold;
     padding: 15px 40px;
+    box-shadow: 0px 0px 10px 2px #00ffff;
+    position: absolute;
 }
