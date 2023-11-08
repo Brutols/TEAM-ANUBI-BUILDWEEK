@@ -139,3 +139,18 @@ const showQuestion = function () {  // mostra domande e risposte in html
 };
 
 showQuestion()
+
+let changeQuestion= function (){
+if (aray.oggetto.correct_answer===Button.innertext) {
+vote += 1
+}
+};
+
+if (questions.length>0){
+showQuestion()
+}
+else{
+  console.log(vote)
+}
+
+
