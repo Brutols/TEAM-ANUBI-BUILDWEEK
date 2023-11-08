@@ -100,10 +100,11 @@ const questions = [
 //TODO counter da 30sec a 0sec (border per il bordino che si svuota)
 let vote = 0;
 
-const randomSelector = Math.floor(Math.random() * questions.length); //seleziona domanda randomica
-console.log(randomSelector);
+let currentQuestionIndex = randomSelector
 
 const showQuestion = function () {  // mostra domande e risposte in html
+  const randomSelector = Math.floor(Math.random() * questions.length); //seleziona domanda randomica
+  console.log(randomSelector);
     let currentQuestion = questions[randomSelector]
     console.log(currentQuestion);
     //! document.querySelector("h1").innerText = `${currentQuestion.question}`
@@ -128,7 +129,7 @@ const showQuestion = function () {  // mostra domande e risposte in html
             array[randomIndex], array[currentIndex]];
         }
       
-        return array;
+        return array, randomSelector;
       }
       shuffle(answers)
       console.log(answers);
@@ -139,3 +140,15 @@ const showQuestion = function () {  // mostra domande e risposte in html
 };
 
 showQuestion()
+
+
+  let checkAnswer = function() {
+    if (answerButton.innerText === questions[currentQuestionIndex].correct_answer) {
+      vote += 1
+    };
+    if (questions.length > 0) {
+      showQuestion()
+    } else {
+      //risultato
+    }
+  }
