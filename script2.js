@@ -132,6 +132,10 @@ const showQuestion = function () {  // mostra domande e risposte in html
       }
       shuffle(answers)
       console.log(answers);
+      //! risposte innerHTML
+      questions.splice(randomSelector, 1)
+      console.log(questions);
+      console.log(questions.length);
 };
 
 showQuestion()
