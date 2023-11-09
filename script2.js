@@ -104,6 +104,7 @@ let counter = 0;
 let currentQuestionIndex;
 console.log(currentQuestionIndex);
 
+let answerButtons;
 let checkAnswer = function (click) {
   if (
     click.target.innerText === questions[currentQuestionIndex].correct_answer
@@ -120,7 +121,6 @@ let checkAnswer = function (click) {
   }
 };
 
-let answerButtons;
 
 const showQuestion = function () {
   // mostra domande e risposte in html
@@ -203,7 +203,9 @@ let timer = function () {
 
     }
     else {     
-      clearInterval(timer);
+      showQuestion()
+      counterTimer = 30
+      setInterval(timer, 10);
     }
   }
 // window.setTimeout("timer()", 5000); avvia funzione dopo n secondi caricamento browser
