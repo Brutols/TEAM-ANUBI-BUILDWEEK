@@ -113,6 +113,8 @@ let checkAnswer = function (click) {
   questions.splice(currentQuestionIndex, 1);
   if (questions.length > 0) {
     showQuestion();
+    counterTimer = 30
+    setInterval(timer, 10);
   } else {
     alert(`il tuo voto è: ${vote}`)
   }
@@ -177,11 +179,11 @@ showQuestion();
 
 let time = document.querySelector(".timer")
 let counterTimer = 30;
-var s;  // secondo
-var ss; // secondi al clock
-var hh; // ora al clock
-var mm; // min al clock
-var ms; // millisecondi al clock
+let s;  // secondo
+let ss; // secondi al clock
+let hh; // ora al clock
+let mm; // min al clock
+let ms; // millisecondi al clock
 
 let timer = function () {
     let data = new Date()
