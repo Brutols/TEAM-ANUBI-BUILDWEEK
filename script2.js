@@ -176,7 +176,7 @@ const showQuestion = function () {
 showQuestion();
 
 let time = document.querySelector(".timer")
-let counterTimer = 10;
+let counterTimer = 30;
 var s;  // secondo
 var ss; // secondi al clock
 var hh; // ora al clock
