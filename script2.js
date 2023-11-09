@@ -99,17 +99,36 @@ const questions = [
 //TODO funzione che verifica se la risposta è corretta, manda avanti la domanda e salva il risultato in una variabile
 //TODO counter da 30sec a 0sec (border per il bordino che si svuota)
 let vote = 0;
+let counter = 0;
 
 let currentQuestionIndex;
 console.log(currentQuestionIndex);
 
+let checkAnswer = function (click) {
+  if (
+    click.target.innerText === questions[currentQuestionIndex].correct_answer
+  ) {
+    vote += 1;
+  }
+  questions.splice(currentQuestionIndex, 1);
+  if (questions.length > 0) {
+    showQuestion();
+  } else {
+    alert(`il tuo voto è: ${vote}`)
+  }
+};
+
+let answerButtons;
+
 const showQuestion = function () {
   // mostra domande e risposte in html
+  document.querySelector("footer").innerHTML = `<p>QUESTION ${counter += 1}<font color="#af0089">/10</font></p>`
+  document.querySelector(".buttons").innerHTML = "";
   const randomSelector = Math.floor(Math.random() * questions.length); //seleziona domanda randomica
   console.log(randomSelector);
   let currentQuestion = questions[randomSelector];
   console.log(currentQuestion);
-  //! document.querySelector("h1").innerText = `${currentQuestion.question}`
+  document.querySelector(".title").innerText = `${currentQuestion.question}`;
   let answers = [];
   answers.push(currentQuestion.correct_answer);
   for (let i = 0; i < currentQuestion.incorrect_answers.length; i++) {
@@ -138,25 +157,20 @@ const showQuestion = function () {
   };
   shuffle(answers);
   console.log(answers);
-  //! risposte innerHTML
-  questions.splice(randomSelector, 1);
+  for (let i = 0; i < answers.length; i++) {
+    document.querySelector(
+      ".buttons"
+    ).innerHTML += `<button class="tasto">${answers[i]}</button>`;
+  }
   console.log(questions);
   console.log(questions.length);
   currentQuestionIndex = randomSelector;
+  answerButtons = document.querySelectorAll(".tasto");
+  for (let i = 0; i < answerButtons.length; i++) {
+    answerButtons[i].onclick = checkAnswer;
+  }
+  console.log(currentQuestionIndex);
+  console.log(vote);
 };
 
 showQuestion();
-console.log(currentQuestionIndex);
-
-let checkAnswer = function () {
-  if (
-    answerButton.innerText === questions[currentQuestionIndex].correct_answer
-  ) {
-    vote += 1;
-  }
-  if (questions.length > 0) {
-    showQuestion();
-  } else {
-    //!mostrare risultato
-  }
-};
