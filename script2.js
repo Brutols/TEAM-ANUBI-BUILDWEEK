@@ -162,19 +162,35 @@ let checkAnswer = function () {
 };
 
 let time = document.querySelector(".timer")
-let counter = 30;
+let counter = 10;
+var s;  // secondo
+var ss; // secondi al clock
+var hh; // ora al clock
+var mm; // min al clock
+var ms; // millisecondi al clock
 
 let timer = function () {
-    counter -= 1;
-    if (counter >= 0) {
-      time.innerText = counter
+    var data = new Date()
+    ms = data.getMilliseconds();
+    ss = data.getSeconds();
+    mm = data.getMinutes();
+    hh = data.getHours();
+
+    if (counter >= 0) { 
+
+      if (ss!=s) {
+        console.log( hh +':'+mm+':'+ss+':'+ms);
+        s = ss
+        time.innerText = counter 
+        counter -= 1;
+      }
+
     }
     else {     
-      time.innerText = ""
       clearInterval(timer);
     }
   }
 // window.setTimeout("timer()", 5000); avvia funzione dopo n secondi caricamento browser
-  setInterval(timer, 1000);
+  setInterval(timer, 10);
 
 
