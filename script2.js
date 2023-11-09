@@ -184,16 +184,16 @@ var mm; // min al clock
 var ms; // millisecondi al clock
 
 let timer = function () {
-    var data = new Date()
+    let data = new Date()
     ms = data.getMilliseconds();
-    ss = data.getSeconds();
     mm = data.getMinutes();
     hh = data.getHours();
+    ss = data.getSeconds();
 
     if (counterTimer >= 0) { 
 
       if (ss!=s) {
-        console.log( hh +':'+mm+':'+ss+':'+ms);
+
         s = ss
         time.innerText = counterTimer 
         counterTimer -= 1;

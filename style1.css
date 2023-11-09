@@ -4,6 +4,7 @@ body {
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
+  height: 100vh;
 }
 
 header {
@@ -16,7 +17,7 @@ header {
   margin: 0;
 }
 
-main {
+.layoutMargin {
   margin-left: 5%;
   margin-top: 7.5%;
   margin-bottom: 7.5%;
@@ -59,23 +60,15 @@ ul {
 }
 
 footer {
-  margin-left: 5%;
-  margin-right: 37%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
-
-.terms {
-  display: inline-block;
-  margin-right: 30%;
-}
-
-.button {
-  display: inline-block;
-}
-
 label {
   color: white;
   font-size: 18px;
   font-family: Inter;
+  margin-left: 20px;
 }
 
 #checkbox {
@@ -85,7 +78,7 @@ label {
     vertical-align: bottom;
 }
 
-button {
+.button button{
     background-color: #00ffff;
     color: black;
     font-family: Inter;
@@ -93,15 +86,17 @@ button {
     border: none;
     font-weight: bold;
     padding: 15px 40px;
+    box-shadow: 0px 1px 6px 2px rgb(162, 67, 142);
 }
-.check {
-  width: 20px;
-  height: 20px;
-  margin-left: 20px;
-}
-.check button{
+
+.checkButton{
   background-color: transparent;
-  border: solid 2px black;
+  border: solid 3px whitesmoke;
+  color: whitesmoke;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  aspect-ratio: 1/1;
 }
 .visibility{
   visibility: hidden;
