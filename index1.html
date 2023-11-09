@@ -18,7 +18,7 @@
     <header>
       <img src="./assets/epicode_logo.png" alt="epicode_logo" id="logo" />
     </header>
-    <main>
+    <main class="layoutMargin">
       <h1>Welcome to<br /><span>your exam</span></h1>
       <h3>Instructions</h3>
       <p id="info">
@@ -37,23 +37,21 @@
         <li>This exam will take approx. <span>0-5 minutes</span>.</li>
       </ul>
     </main>
-    <footer>
+    <footer class="layoutMargin">
+     
       <div class="terms">
-        <input type="checkbox" id="checkbox"/>
+        <button class="checkButton">
+          <ion-icon class="visibility" name="checkmark-sharp"></ion-icon>
+        </button>
+        
         <label for="checkbox"
           >I promise to answer myself without help from anyone</label
         >
       </div>
-      <div class="button">
-        <a href=""><button type="submit">PROCEED</button></a>
-      </div>
-      
-      <div class="check">
-        <button class="checkButton">
-          <ion-icon class="visibility" name="checkmark-sharp"></ion-icon>
-        </button>
-      </div>
-
+        <div class="button">
+          <a href=""><button type="submit">PROCEED</button></a>
+        </div>
+      <div> p</div>
     </footer>
     <script src="./script1.js"></script>
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>

@@ -162,24 +162,24 @@ let checkAnswer = function () {
 };
 
 let time = document.querySelector(".timer")
-let counter = 10;
-var s;  // secondo
-var ss; // secondi al clock
-var hh; // ora al clock
-var mm; // min al clock
-var ms; // millisecondi al clock
+let counter = 30;
+let s;  // secondo
+let ss; // secondi al clock
+let hh; // ora al clock
+let mm; // min al clock
+let ms; // millisecondi al clock
 
 let timer = function () {
-    var data = new Date()
+    let data = new Date()
     ms = data.getMilliseconds();
-    ss = data.getSeconds();
     mm = data.getMinutes();
     hh = data.getHours();
+    ss = data.getSeconds();
 
     if (counter >= 0) { 
-
+      console.log( hh +':'+mm+':'+ss+':'+ms);
       if (ss!=s) {
-        console.log( hh +':'+mm+':'+ss+':'+ms);
+
         s = ss
         time.innerText = counter 
         counter -= 1;
