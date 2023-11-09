@@ -160,3 +160,21 @@ let checkAnswer = function () {
     //!mostrare risultato
   }
 };
+
+let time = document.querySelector(".timer")
+let counter = 30;
+
+let timer = function () {
+    counter -= 1;
+    if (counter >= 0) {
+      time.innerText = counter
+    }
+    else {     
+      time.innerText = ""
+      clearInterval(timer);
+    }
+  }
+// window.setTimeout("timer()", 5000); avvia funzione dopo n secondi caricamento browser
+  setInterval(timer, 1000);
+
+
