@@ -1,14 +1,12 @@
 body {
   background-color: #a30083;
   color: white;
-  padding-left: 17%;
-  padding-top: 5%;
-  padding-right: 17%;
-  padding-bottom: 5%;
+  margin: 0;
 }
 
 .container {
   width: 100%;
+  min-height: 100vh;
   background-image: url(./assets/bg.jpg);
   background-repeat: no-repeat;
   background-size: cover;
@@ -51,15 +49,17 @@ header {
 /*  DOMANDA  */
 
 .request {
-  align-items: center;
-  text-align: center;
+  display: flex;
+  justify-content: center;
   height: 15%;
 }
 
 .title {
+  width: 60%;
   font-size: 40px;
-  margin-top: 20px;
   font-family: outfit;
+  margin: 0;
+  text-align: center;
 }
 
 /*  MAIN  */
@@ -67,10 +67,21 @@ header {
 main {
   display: flex;
   flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 40px;
+}
+
+.buttons {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 20px;
+  width: 70%;
 }
 
 .tasto {
-  width: 65%;
+  width: 40%;
   height: 55px;
   border-radius: 25px;
   border: none;
@@ -84,46 +95,6 @@ main {
   background-color: #af0089;
   transition: 0, 7s;
   box-shadow: 0px 1px 6px 2px rgb(162, 67, 142);
-}
-
-.b1 {
-  display: flex;
-  flex-direction: row;
-}
-
-.button1 {
-  width: 50%;
-  text-align: end;
-  padding-right: 20px;
-  padding-top: 10px;
-  padding-bottom: 10px;
-}
-
-.button2 {
-  width: 50%;
-  padding-left: 20px;
-  padding-top: 10px;
-  padding-bottom: 10px;
-}
-
-.b2 {
-  display: flex;
-  flex-direction: row;
-}
-
-.button3 {
-  width: 50%;
-  text-align: end;
-  padding-right: 20px;
-  padding-top: 10px;
-  padding-bottom: 10px;
-}
-
-.button4 {
-  width: 50%;
-  padding-left: 20px;
-  padding-top: 10px;
-  padding-bottom: 10px;
 }
 
 footer {
