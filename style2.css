@@ -5,6 +5,9 @@ body {
 }
 
 .container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
   width: 100%;
   min-height: 100vh;
   background-image: url(./assets/bg.jpg);
@@ -16,7 +19,8 @@ body {
 
 header {
   display: flex;
-  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
 }
 
 .epicode {
@@ -26,9 +30,6 @@ header {
 
 #logo {
   width: 30%;
-  padding-left: 23%;
-  padding-top: 8%;
-  padding-bottom: 20%;
 }
 .timer{
   font-size: 20px;
