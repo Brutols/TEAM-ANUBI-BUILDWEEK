@@ -31,10 +31,6 @@ h1 {
   line-height: 0.75em;
 }
 
-span {
-  font-weight: bold;
-}
-
 h3 {
   margin: 0;
   color: #c2128d;
@@ -64,20 +60,25 @@ footer {
   justify-content: space-between;
   align-items: center;
 }
-label {
+.testo {
   color: white;
-  font-size: 18px;
+  font-size: 16px;
   font-family: Inter;
   margin-left: 20px;
 }
-
 #checkbox {
     width: 20px;
     height: 20px;
     cursor: pointer;
     vertical-align: bottom;
 }
-
+.termsAndCond{
+  display: flex;
+  color: white;
+  align-items: center;
+  gap: 15px;
+  font-family: Inter;
+}
 .button button{
     background-color: #00ffff;
     color: black;
@@ -86,7 +87,7 @@ label {
     border: none;
     font-weight: bold;
     padding: 15px 40px;
-    box-shadow: 0px 1px 6px 2px rgb(162, 67, 142);
+    box-shadow: 0px 1px 6px 2px rgb(0, 255, 255);
 }
 
 .checkButton{
