@@ -105,3 +105,12 @@ footer {
   font-size: 14px;
   letter-spacing: 3px;
 }
+.visibility{
+  visibility: hidden;
+}
+.finalScore{
+  text-align: center;
+  font-size: 30px;
+  font-weight: bold;
+  color: #af0089
+}

@@ -114,10 +114,16 @@ let checkAnswer = function (click) {
   questions.splice(currentQuestionIndex, 1);
   if (questions.length > 0) {
     showQuestion();
-    counterTimer = 30
+    counterTimer = 10;
     setInterval(timer, 10);
   } else {
-    alert(`il tuo voto è: ${vote}`)
+    let final = document.querySelectorAll(".final");
+    let finalScore = document.querySelector(".finalScore")
+    for (let i = 0; i < final.length; i++) {
+      final[i].classList.add("visibility")
+    }
+    finalScore.innerText = "PUNTEGGIO FINALE  "+ vote/10*100 +' %'
+    clearInterval(timer);
   }
 };
 
@@ -178,7 +184,7 @@ const showQuestion = function () {
 showQuestion();
 
 let time = document.querySelector(".timer")
-let counterTimer = 30;
+let counterTimer = 10;
 let s;  // secondo
 let ss; // secondi al clock
 let hh; // ora al clock
@@ -203,12 +209,13 @@ let timer = function () {
 
     }
     else {     
-      showQuestion()
-      counterTimer = 30
       setInterval(timer, 10);
+      showQuestion()
+      counterTimer = 10
     }
   }
 // window.setTimeout("timer()", 5000); avvia funzione dopo n secondi caricamento browser
-  setInterval(timer, 10);
+ //
+ setInterval(timer, 10);
 
 
