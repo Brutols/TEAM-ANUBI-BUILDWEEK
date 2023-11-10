@@ -135,8 +135,10 @@ footer {
   visibility: hidden;
 }
 .finalScore{
+  align-self: center;
   text-align: center;
   font-size: 30px;
   font-weight: bold;
-  color: #af0089
+  color: white;
+  font-family: outfit;
 }

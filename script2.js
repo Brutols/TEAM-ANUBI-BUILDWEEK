@@ -119,11 +119,11 @@ let checkAnswer = function (click) {
     showQuestion();
   } else {
     let final = document.querySelectorAll(".final");
-    let finalScore = document.querySelector(".finalScore")
+    let finalScore = document.querySelector(".finalScore");
     for (let i = 0; i < final.length; i++) {
-      final[i].classList.add("visibility")
+      final[i].classList.add("visibility");
     }
-    finalScore.innerText = "PUNTEGGIO FINALE  "+ vote/10*100 +' %'
+    finalScore.innerText = `PUNTEGGIO FINALE ${(vote / 10) * 100} %`;
     clearInterval(timer);
   }
 };
@@ -206,6 +206,14 @@ let timer = function () {
       time.innerText = counterTimer;
       counterTimer -= 1;
     }
+  } else if (currentQuestionIndex === 0) {
+    let final = document.querySelectorAll(".final");
+    let finalScore = document.querySelector(".finalScore");
+    for (let i = 0; i < final.length; i++) {
+      final[i].classList.add("visibility");
+    }
+    finalScore.innerText = `PUNTEGGIO FINALE ${(vote / 10) * 100} %`;
+    clearInterval(timer);
   } else {
     questions.splice(currentQuestionIndex, 1);
     showQuestion();
@@ -217,7 +225,7 @@ let timer = function () {
 setInterval(timer, 10);
 
 function resetAnimation() {
-  let toggle = document.querySelector("svg")
-  toggle.innerHTML = ""
-  toggle.innerHTML = `<circle r="18" cx="20" cy="20" class="animation"></circle>`
+  let toggle = document.querySelector("svg");
+  toggle.innerHTML = "";
+  toggle.innerHTML = `<circle r="18" cx="20" cy="20" class="animation"></circle>`;
 }
