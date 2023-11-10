@@ -7,20 +7,27 @@ body {
   height: 100vh;
 }
 
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  height: 100vh;
+}
+
+.maincontainer {
+  display: flex;
+  flex-direction: column;
+  width: 70%;
+}
+
 header {
   margin-left: 5%;
-  margin-top: 2.5%;
 }
 
 #logo {
   width: 10%;
   margin: 0;
-}
-
-.layoutMargin {
-  margin-left: 5%;
-  margin-top: 7.5%;
-  margin-bottom: 7.5%;
 }
 
 h1 {
@@ -29,10 +36,6 @@ h1 {
   font-size: 60px;
   font-family: Inter;
   line-height: 0.75em;
-}
-
-span {
-  font-weight: bold;
 }
 
 h3 {
@@ -61,23 +64,28 @@ ul {
 
 footer {
   display: flex;
-  justify-content: space-between;
   align-items: center;
+  justify-content: space-between;
 }
-label {
+.testo {
   color: white;
-  font-size: 18px;
+  font-size: 16px;
   font-family: Inter;
   margin-left: 20px;
 }
-
 #checkbox {
     width: 20px;
     height: 20px;
     cursor: pointer;
     vertical-align: bottom;
 }
-
+.termsAndCond{
+  display: flex;
+  color: white;
+  align-items: center;
+  gap: 15px;
+  font-family: Inter;
+}
 .button button{
     background-color: #00ffff;
     color: black;
@@ -86,7 +94,19 @@ label {
     border: none;
     font-weight: bold;
     padding: 15px 40px;
-    box-shadow: 0px 1px 6px 2px rgb(162, 67, 142);
+    box-shadow: 0px 1px 17px 2px rgb(0, 255, 255);
+}
+
+.proceedButton:hover{
+  background-color: #c2128d;
+  color: white;
+  font-family: Inter;
+  font-size: 33px;
+  border: none;
+  font-weight: bold;
+  padding: 15px 40px;
+  box-shadow: 0px 1px 17px 2px #c2128d;
+
 }
 
 .checkButton{
