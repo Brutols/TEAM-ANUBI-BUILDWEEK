@@ -31,22 +31,47 @@ header {
 #logo {
   width: 30%;
 }
-.timer{
+.timer {
   font-size: 20px;
 }
-.boxTimer{
-  border: solid 10px rgb(0, 234, 255);
+.boxTimer {
   width: 67px;
   height: 67px;
-  border-radius: 50%;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  position: relative;
 }
-.boxTimer p {
-  font-size: 7px;
+
+svg {
+  position: absolute;
+  top: 13px;
+  right: 13.5px;
+  width: 40px;
+  height: 40px;
+  transform: rotateY(-180deg) rotateZ(-90deg);
 }
+
+svg circle {
+  stroke-dasharray: 113px;
+  stroke-dashoffset: 0px;
+  stroke-linecap: round;
+  stroke-width: 4px;
+  stroke: rgb(0, 234, 255);
+  fill: none;
+  animation: countdown 30s linear infinite forwards;
+}
+
+@keyframes countdown {
+  from {
+    stroke-dashoffset: 0px;
+  }
+  to {
+    stroke-dashoffset: 113px;
+  }
+}
+
 /*  DOMANDA  */
 
 .request {

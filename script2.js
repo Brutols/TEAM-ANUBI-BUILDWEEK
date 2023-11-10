@@ -16,7 +16,7 @@ const questions = [
     type: "multiple",
     difficulty: "easy",
     question:
-      "In the programming language Java, which of these keywords would you put on a variable to make sure it doesn&#039;t get modified?",
+      "In the programming language Java, which of these keywords would you put on a variable to make sure it doesn't get modified?",
     correct_answer: "Final",
     incorrect_answers: ["Static", "Private", "Public"],
   },
@@ -113,18 +113,20 @@ let checkAnswer = function (click) {
   }
   questions.splice(currentQuestionIndex, 1);
   if (questions.length > 0) {
-    showQuestion();
-    counterTimer = 30
+    resetAnimation();
+    counterTimer = 30;
     setInterval(timer, 10);
+    showQuestion();
   } else {
-    alert(`il tuo voto è: ${vote}`)
+    alert(`il tuo voto è: ${vote}`);
   }
 };
 
-
 const showQuestion = function () {
   // mostra domande e risposte in html
-  document.querySelector("footer").innerHTML = `<p>QUESTION ${counter += 1}<font color="#af0089">/10</font></p>`
+  document.querySelector(
+    "footer"
+  ).innerHTML = `<p>QUESTION ${(counter += 1)}<font color="#af0089">/10</font></p>`;
   document.querySelector(".buttons").innerHTML = "";
   const randomSelector = Math.floor(Math.random() * questions.length); //seleziona domanda randomica
   console.log(randomSelector);
@@ -177,38 +179,39 @@ const showQuestion = function () {
 
 showQuestion();
 
-let time = document.querySelector(".timer")
+let time = document.querySelector(".timer");
 let counterTimer = 30;
-let s;  // secondo
+let s; // secondo
 let ss; // secondi al clock
 let hh; // ora al clock
 let mm; // min al clock
 let ms; // millisecondi al clock
 
 let timer = function () {
-    let data = new Date()
-    ms = data.getMilliseconds();
-    mm = data.getMinutes();
-    hh = data.getHours();
-    ss = data.getSeconds();
+  let data = new Date();
+  ms = data.getMilliseconds();
+  mm = data.getMinutes();
+  hh = data.getHours();
+  ss = data.getSeconds();
 
-    if (counterTimer >= 0) { 
-
-      if (ss!=s) {
-
-        s = ss
-        time.innerText = counterTimer 
-        counterTimer -= 1;
-      }
-
+  if (counterTimer >= 0) {
+    if (ss != s) {
+      s = ss;
+      time.innerText = counterTimer;
+      counterTimer -= 1;
     }
-    else {     
-      showQuestion()
-      counterTimer = 30
-      setInterval(timer, 10);
-    }
+  } else {
+    questions.splice(currentQuestionIndex, 1);
+    showQuestion();
+    counterTimer = 30;
+    setInterval(timer, 10);
   }
+};
 // window.setTimeout("timer()", 5000); avvia funzione dopo n secondi caricamento browser
-  setInterval(timer, 10);
+setInterval(timer, 10);
 
-
+function resetAnimation() {
+  let toggle = document.querySelector("svg")
+  toggle.innerHTML = ""
+  toggle.innerHTML = `<circle r="18" cx="20" cy="20" class="animation"></circle>`
+}
